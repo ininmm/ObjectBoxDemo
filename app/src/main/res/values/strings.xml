@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">ObjectBoxDemo</string>
+
+    <string name="enter_new_entity">Enter new entity</string>
+    <string name="add">Add</string>
+    <string name="click_to_remove">Click a entity to remove it</string>
+</resources>
