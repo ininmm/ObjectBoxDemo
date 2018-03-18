@@ -22,17 +22,17 @@ class EntityAdapter : RecyclerView.Adapter<EntityAdapter.ViewHolder>() {
         notifyDataSetChanged()
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): ViewHolder {
-        val view = LayoutInflater.from(parent?.context)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        val view = LayoutInflater.from(parent.context)
                 .inflate(R.layout.item_entity, parent, false)
         return ViewHolder(view)
     }
 
     override fun getItemCount(): Int = dataset.size
 
-    override fun onBindViewHolder(holder: ViewHolder?, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.apply {
-            this!!.itemView.tag = position
+            this.itemView.tag = position
             itemView.setOnClickListener {
                 dataset[position].text?.let { itemClick?.invoke(position, it) }
             }

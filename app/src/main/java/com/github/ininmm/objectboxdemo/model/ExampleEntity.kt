@@ -8,6 +8,5 @@ import io.objectbox.annotation.Id
  * on 2018/3/4.
  */
 @Entity
-class ExampleEntity(@Id var id: Long, var name: String, var age: Int, var address: String?,
-                    var text: String?, var comment: String?) {
-}
+data class ExampleEntity(@Id var id: Long = 0, var name: String? = null, var age: Int = -1, var address: String? = null,
+                    var text: String? = null, var comment: String? = null)

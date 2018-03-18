@@ -1,6 +1,7 @@
 package com.github.ininmm.objectboxdemo
 
 import android.app.Application
+import com.github.ininmm.objectboxdemo.model.MyObjectBox
 import io.objectbox.BoxStore
 
 /**
@@ -10,13 +11,15 @@ import io.objectbox.BoxStore
 class App : Application() {
 
     companion object {
-        const val TAG = "APP"
+        val TAG = this::class.java.simpleName
+        @JvmStatic lateinit var instance: App
     }
 
     lateinit var boxStore: BoxStore
 
     override fun onCreate() {
         super.onCreate()
+        instance = this
         boxStore = MyObjectBox.builder().androidContext(this).build()
     }
 }
